@@ -91,7 +91,7 @@ class MNISTDataModule(LightningDataModule):
 
         :return: The number of MNIST classes (10).
         """
-        return 10
+        return self.data_train["y"].shape[1]
 
     def prepare_data(self) -> None:
         """Download data if needed. Lightning ensures that `self.prepare_data()` is called only
